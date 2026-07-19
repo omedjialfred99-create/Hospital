@@ -5,73 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Vitrine web</title>
+    <title>Hôpital Effort</title>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h2>Effort</h2>
-            </div>
-            <ul>
-                <li><a href="#acceuil">Accueil</a></li>
-                <li><a href="#consultation">Consultation</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="#about">À propos</a></li>
-            </ul>
+    <header class="topbar">
+        <div class="logo">
+            <i class="fa-solid fa-hospital"></i>
+            <span>Hôpital Effort</span>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Accueil</a>
+            <a href="services.html">Services</a>
+            <a href="#">Spécialistes</a>
+            <a href="#">Contact</a>
+            <a href="#" class="btn btn-emergency">Urgence</a>
         </nav>
-        <div class="hero">
-            <h1>Voulez-vous consulter un professionnel<br> de santé ?</h1>
-                <button class="btn" href="mailto:medjialfred@gmail.com">Prendre rendez-vous</button>
-        </div>
     </header>
-    <!--Layout  services-->
-    <section class="services">
-        <h2>Nos services en ligne</h2>
-        <div class="grid-services">
-            <div class="card">
-                <i class="fas fa-stethoscope"></i>
-                <h3>Consultation médicale</h3>
-                <p>Obtenez des conseils médicaux personnalisés de la part de nos professionnels de santé qualifiés.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-pills"></i>
-                <h3>Prescriptions en ligne</h3>
-                <p>Recevez des prescriptions médicales en ligne pour vos besoins de santé, sans avoir à vous déplacer.</p>
-            </div>
-            <div class="card">
-                <i class="fas fa-heartbeat"></i>
-                <h3> Suivi médical</h3>
-                <p>Profitez d'un suivi régulier de votre état de santé par nos professionnels de santé qualifiés.</p>
-            </div>
-    </section>
-    <p></p>
-    <section>
-        <div class="services-grid">
-            <h2>Nos services en présentiel</h2>
-            <div class="card">
-            <i class="fa-solid fa-user-doctor"></i>
-              <h3>Medecine générale & spécialisée</h3>
-        </div>
-            <div class="card">
-                <i class="fa-solid fa-microscope"></i>
-                <h3>Laboratoires d'analyses bio médicales</h3>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-bed-pulse"></i>
-                <h3>Echographies</h3>
-            </div>
-            <div class="card">
-                <i class="fa-solid fa-heart"></i>
-                <h3>Cpn/Cps</h3>
-            </div>
-                <div class="card">
-                    <i class="fa-solid fa-head-side-mask"></i>
-                    <h3>Oxygenotherapie</h3>
-                </div>
-        </div>
 
+    <main class="hero">
+        <section class="hero-content">
+            <div class="badge">
+                <i class="fa-solid fa-heart-pulse"></i>
+                Soins de qualité, 24h/24
+            </div>
+            <h1>Votre santé, notre priorité</h1>
+            <p>Bienvenue à l’Hôpital Effort, un lieu de confiance où les professionnels accompagnent chaque patient avec bienveillance, écoute et expertise.</p>
+            <div class="hero-actions">
+                <a href="#" class="btn btn-primary">Prendre rendez-vous</a>
+                <a href="#" class="btn btn-secondary">Nous contacter</a>
+            </div>
+            <div class="stats">
+                <div>
+                    <strong>24/7</strong>
+                    <span>Urgences</span>
+                </div>
+                <div>
+                    <strong>25+</strong>
+                    <span>Spécialités</span>
+                </div>
+                <div>
+                    <strong>98%</strong>
+                    <span>Satisfaction</span>
+                </div>
+            </div>
+        </section>
+
+        <aside class="hero-card">
+            <h3>Consultation rapide</h3>
+            <ul>
+                <li><i class="fa-solid fa-stethoscope"></i> Médecine générale</li>
+                <li><i class="fa-solid fa-syringe"></i> Examens et soins</li>
+                <li><i class="fa-solid fa-user-doctor"></i> Spécialistes disponibles</li>
+            </ul>
+        </aside>
+    </main>
+
+    <section class="services">
+        <article class="service-card">
+            <i class="fa-solid fa-hands-holding-child"></i>
+            <h4>Accompagnement</h4>
+            <p>Une équipe à votre écoute pour vous guider à chaque étape.</p>
+        </article>
+        <article class="service-card">
+            <i class="fa-solid fa-ambulance"></i>
+            <h4>Urgences</h4>
+            <p>Intervention rapide et sécurisée pour toutes les situations.</p>
+        </article>
+        <article class="service-card">
+            <i class="fa-solid fa-microscope"></i>
+            <h4>Diagnostic</h4>
+            <p>Des examens fiables et des résultats rapides pour un meilleur suivi.</p>
+        </article>
     </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
