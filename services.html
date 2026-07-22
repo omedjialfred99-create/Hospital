@@ -16,9 +16,9 @@
         <nav class="nav-links">
             <a href="index.html">Accueil</a>
             <a href="services.html" class="active">Services</a>
-            <a href="#">Spécialistes</a>
-            <a href="#">Contact</a>
-            <a href="#" class="btn btn-emergency">Urgence</a>
+            <a href="specialistes.html">Spécialistes</a>
+            <a href="contact.html">Contact</a>
+            <a href="tel:+243819456654" class="btn btn-emergency">Urgence</a>
         </nav>
     </header>
 
@@ -69,5 +69,32 @@
     </main>
 
     <script src="script.js"></script>
+    <!-- Call confirmation modal -->
+    <div id="call-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="call-modal-title">
+        <div class="modal-backdrop" data-modal-close></div>
+        <div class="modal-panel" role="document">
+            <h2 id="call-modal-title">Appel d'urgence</h2>
+            <p id="call-modal-text">Appeler <strong id="call-number">+243 819 456 654</strong> ?</p>
+            <div class="modal-actions">
+                <button id="call-confirm" class="btn btn-primary">Appeler</button>
+                <button id="call-cancel" class="btn btn-outline">Annuler</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function(){
+        const modal = document.getElementById('call-modal');
+        const numberEl = document.getElementById('call-number');
+        let pendingTel = null;
+        function showModal(num, tel){ numberEl.textContent = num; pendingTel = tel; modal.setAttribute('aria-hidden','false'); document.body.style.overflow = 'hidden'; }
+        function hideModal(){ modal.setAttribute('aria-hidden','true'); pendingTel=null; document.body.style.overflow = ''; }
+        document.addEventListener('click', function(e){ const btn = e.target.closest('.btn-emergency'); if(!btn) return; e.preventDefault(); const tel = btn.getAttribute('href')||btn.dataset.tel; const num = (tel||'').replace('tel:',''); showModal(num,tel); });
+        document.getElementById('call-confirm').addEventListener('click', function(){ if(pendingTel) window.location.href = pendingTel; });
+        document.getElementById('call-cancel').addEventListener('click', hideModal);
+        modal.addEventListener('click', function(e){ if(e.target.dataset.modalClose!==undefined) hideModal(); });
+        document.addEventListener('keydown', function(e){ if(e.key==='Escape') hideModal(); });
+    })();
+    </script>
 </body>
 </html>
