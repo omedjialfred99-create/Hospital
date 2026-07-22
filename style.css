@@ -398,6 +398,20 @@ a {
     .modal-panel { width: 94%; max-width: 360px; }
 }
 
+/* Contact success message */
+.contact-success {
+    background: #e9fbf6;
+    border: 1px solid #c8f0e2;
+    color: #0a6d56;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+}
+
+/* Modal focus states */
+.modal-panel :focus { outline: 3px solid rgba(15,109,143,0.14); outline-offset: 2px; }
+
 /* Specialists section */
 .specialists {
     padding: 1rem 5% 4rem;
