@@ -125,3 +125,22 @@ document.querySelectorAll('.btn').forEach((button) => {
             });
     });
 })();
+
+// Welcome toast for visitors
+(function(){
+    const welcomeText = 'Bienvenue à l\'Hôpital Effort — votre santé est notre priorité !';
+    const toast = document.createElement('div');
+    toast.className = 'welcome-toast';
+    toast.innerHTML = `<span>${welcomeText}</span><button type="button" class="toast-close" aria-label="Fermer le message de bienvenue">×</button>`;
+    document.body.appendChild(toast);
+
+    const closeBtn = toast.querySelector('.toast-close');
+    const hideToast = () => {
+        toast.classList.remove('welcome-toast--visible');
+        setTimeout(() => toast.remove(), 300);
+    };
+
+    closeBtn.addEventListener('click', hideToast);
+    setTimeout(() => toast.classList.add('welcome-toast--visible'), 50);
+    setTimeout(hideToast, 6500);
+})();
